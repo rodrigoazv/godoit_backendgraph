@@ -1,0 +1,33 @@
+{
+  "name": "@goduit/server",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "license": "MIT",
+  "scripts": {
+    "dev:server": "ts-node-dev --respawn --transpileOnly src/index.ts",
+    "migration:generate": "ts-node -r dotenv/config ./node_modules/typeorm/cli.js migration:generate --name",
+    "migration:run": "ts-node -r dotenv/config ./node_modules/typeorm/cli.js migration:run",
+    "test": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "apollo-server-express": "^2.17.0",
+    "class-validator": "^0.12.2",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "graphql": "^15.3.0",
+    "pg": "^8.3.3",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.0.0",
+    "typeorm": "^0.2.26",
+    "typescript": "^4.0.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.7",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.8",
+    "ts-node-dev": "^1.0.0-pre.62"
+  }
+}
